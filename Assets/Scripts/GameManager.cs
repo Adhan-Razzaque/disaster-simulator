@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         
         InvokeRepeating(nameof(RewardSouls), 5, 5);
         
-        AudioManager.Instance.Play("Test");
+        AudioManager.Instance.Play("MainMenu");
     }
 
     // Update is called once per frame

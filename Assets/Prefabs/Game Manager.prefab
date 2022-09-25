@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868aeb9dd02478945952f655383e2b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disasterHeight: 1
-  disasterImpactForce: 5
-  disasterDurationInHours: 1
+  disasterHeight: 0
+  disasterImpactForce: 0
+  disasterDurationInHours: 0

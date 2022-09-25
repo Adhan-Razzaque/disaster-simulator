@@ -11028,26 +11028,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3624468516268941178, guid: a8c2487092455b64ea0b3b37d17b60e6, type: 3}
-      propertyPath: Sounds.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624468516268941178, guid: a8c2487092455b64ea0b3b37d17b60e6, type: 3}
-      propertyPath: Sounds.Array.data[0].Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 87d2f718fea20d148aede6a6cf551ac4, type: 3}
-    - target: {fileID: 3624468516268941178, guid: a8c2487092455b64ea0b3b37d17b60e6, type: 3}
-      propertyPath: Sounds.Array.data[0].Name
-      value: Test
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624468516268941178, guid: a8c2487092455b64ea0b3b37d17b60e6, type: 3}
-      propertyPath: Sounds.Array.data[0].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624468516268941178, guid: a8c2487092455b64ea0b3b37d17b60e6, type: 3}
-      propertyPath: Sounds.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5550283472141009624, guid: a8c2487092455b64ea0b3b37d17b60e6, type: 3}
       propertyPath: m_Name
       value: Audio Manager
