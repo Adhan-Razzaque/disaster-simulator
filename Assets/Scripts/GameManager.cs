@@ -7,6 +7,8 @@ using UnityEngine.Rendering.VirtualTexturing;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioManager AudioManagerComponent;
+    
     [SerializeField]
     private int disasterHeight;
     
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour
     private int disasterDurationInHours;
 
     private int _souls;
+
+    private int _totalUpgrades = 0;
 
     public int Souls
     {
@@ -85,6 +89,8 @@ public class GameManager : MonoBehaviour
         };
         
         InvokeRepeating(nameof(RewardSouls), 5, 5);
+        
+        AudioManagerComponent.Play("Test");
     }
 
     // Update is called once per frame
@@ -142,6 +148,13 @@ public class GameManager : MonoBehaviour
 
             CalculateImprovement(upgradeName, upgrade.Value);
             Souls -= upgrade.Price;
+
+            ++_totalUpgrades;
+            if (_totalUpgrades == 9)
+            {
+                Debug.Log("Bought all upgrades");
+            }
+
             return true;
         }
         
