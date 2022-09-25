@@ -9,8 +9,7 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI _guiText;
     private const string _guiStub = "Souls: ";
     
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         EventManager.StartListening("SoulsChanged", UpdateGUI);
     }

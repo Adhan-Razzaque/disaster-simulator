@@ -67,54 +67,53 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Souls = 0;
-        _upgradesDictionary = new Dictionary<string, Upgrade>();
+        Souls = 1;
+        _upgradesDictionary = new Dictionary<string, Upgrade>
+        {
+            // Tier 1
+            {"Height 1", new Upgrade(10, false, 5)},
+            {"Force 1", new Upgrade(10, false, 5)},
+            {"Duration 1", new Upgrade(1, false, 5)},
+            // Tier 2
+            {"Height 2", new Upgrade(1000, false, 25)},
+            {"Force 2", new Upgrade(1000, false, 25)},
+            {"Duration 2", new Upgrade(1000, false, 25)},
+            // Tier 3
+            {"Height 3", new Upgrade(100000, false, 100)},
+            {"Force 3", new Upgrade(100000, false, 100)},
+            {"Duration 3", new Upgrade(100000, false, 100)}
+        };
         
-        // Tier 1
-        _upgradesDictionary.Add("Height 1", new Upgrade(10, false, 25));
-        _upgradesDictionary.Add("Force 1", new Upgrade(10, false, 25));
-        _upgradesDictionary.Add("Duration 1", new Upgrade(10, false, 5));
-        
-        // Tier 2
-        _upgradesDictionary.Add("Height 2", new Upgrade(100, false, 100));
-        _upgradesDictionary.Add("Force 2", new Upgrade(100, false, 100));
-        _upgradesDictionary.Add("Duration 2", new Upgrade(100, false, 20));
-        
-        // Tier 3
-        _upgradesDictionary.Add("Height 3", new Upgrade(1000, false, 1000));
-        _upgradesDictionary.Add("Force 3", new Upgrade(1000, false, 1000));
-        _upgradesDictionary.Add("Duration 3", new Upgrade(1000, false, 24));
+        InvokeRepeating(nameof(RewardSouls), 5, 5);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void AddSouls(int soulsAdded)
+    void RewardSouls()
     {
-        if (soulsAdded == 0)
-        {
-            return;
-        }
-        
-        Souls += soulsAdded;
+        int souls = SoulsRewardSystem.Instance.CalculateReward(disasterHeight, disasterImpactForce,
+            disasterDurationInHours);
+
+        Souls += souls;
     }
 
-    void CalculateImprovement(string name, int value)
+    private void CalculateImprovement(string upgradeName, int value)
     {
-        if (name.Contains("Height"))
+        if (upgradeName.Contains("Height"))
         {
             disasterHeight += value;
         }
 
-        if (name.Contains("Force"))
+        if (upgradeName.Contains("Force"))
         {
             disasterImpactForce += value;
         }
 
-        if (name.Contains("Duration"))
+        if (upgradeName.Contains("Duration"))
         {
             disasterDurationInHours += value;
         }
@@ -125,7 +124,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool purchaseUpgrade(string upgradeName)
+    public bool PurchaseUpgrade(string upgradeName)
     {
         Upgrade upgrade;
         
@@ -141,6 +140,7 @@ public class GameManager : MonoBehaviour
                 return false;
             }
 
+            CalculateImprovement(upgradeName, upgrade.Value);
             Souls -= upgrade.Price;
             return true;
         }

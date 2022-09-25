@@ -40,7 +40,7 @@ public class Interactor : MonoBehaviour
             if (interactable)
             {
                 Debug.Log("I'm interacting with something");
-                bool purchased = GameManager.Instance.purchaseUpgrade(interactable.Name);
+                bool purchased = GameManager.Instance.PurchaseUpgrade(interactable.Name);
                 interactable.SetButtonState(purchased);
             }
         }
