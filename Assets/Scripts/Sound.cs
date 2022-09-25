@@ -13,6 +13,8 @@ using UnityEngine.Audio;
      [Range(.1f, 3f)]
      public float pitch = 1f;
 
+     public bool loop;
+
      [HideInInspector]
      public AudioSource source;
  }

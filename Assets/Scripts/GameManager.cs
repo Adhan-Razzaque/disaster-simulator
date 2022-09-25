@@ -7,8 +7,6 @@ using UnityEngine.Rendering.VirtualTexturing;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioManager AudioManagerComponent;
-    
     [SerializeField]
     private int disasterHeight;
     
@@ -90,7 +88,7 @@ public class GameManager : MonoBehaviour
         
         InvokeRepeating(nameof(RewardSouls), 5, 5);
         
-        AudioManagerComponent.Play("Test");
+        AudioManager.Instance.Play("Test");
     }
 
     // Update is called once per frame

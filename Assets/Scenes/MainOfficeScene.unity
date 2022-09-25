@@ -5790,17 +5790,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8827379852260163202, guid: 421ee3c1f86e7be4ea4423cc88ed2e9b, type: 3}
   m_PrefabInstance: {fileID: 1022441543}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1024031407 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3624468516268941178, guid: a8c2487092455b64ea0b3b37d17b60e6, type: 3}
-  m_PrefabInstance: {fileID: 1679831198063150159}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10978114cb344091ae2ba3bd027eb1f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1026187358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11333,10 +11322,6 @@ PrefabInstance:
       propertyPath: disasterImpactForce
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4544923960341105629, guid: 7e4624d7f391a9740acbc44dc5b4aa66, type: 3}
-      propertyPath: AudioManagerComponent
-      value: 
-      objectReference: {fileID: 1024031407}
     - target: {fileID: 4544923960341105629, guid: 7e4624d7f391a9740acbc44dc5b4aa66, type: 3}
       propertyPath: disasterDurationInHours
       value: 0
