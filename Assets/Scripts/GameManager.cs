@@ -35,11 +35,13 @@ public class GameManager : MonoBehaviour
     {
         public int Price;
         public bool Purchased;
+        public int Value;
 
-        public Upgrade(int price, bool purchased)
+        public Upgrade(int price, bool purchased, int value)
         {
             Price = price;
             Purchased = purchased;
+            Value = value;
         }
     }
 
@@ -69,19 +71,19 @@ public class GameManager : MonoBehaviour
         _upgradesDictionary = new Dictionary<string, Upgrade>();
         
         // Tier 1
-        _upgradesDictionary.Add("Height 1", new Upgrade(10, false));
-        _upgradesDictionary.Add("Force 1", new Upgrade(10, false));
-        _upgradesDictionary.Add("Duration 1", new Upgrade(10, false));
+        _upgradesDictionary.Add("Height 1", new Upgrade(10, false, 25));
+        _upgradesDictionary.Add("Force 1", new Upgrade(10, false, 25));
+        _upgradesDictionary.Add("Duration 1", new Upgrade(10, false, 5));
         
         // Tier 2
-        _upgradesDictionary.Add("Height 2", new Upgrade(100, false));
-        _upgradesDictionary.Add("Force 2", new Upgrade(100, false));
-        _upgradesDictionary.Add("Duration 2", new Upgrade(100, false));
+        _upgradesDictionary.Add("Height 2", new Upgrade(100, false, 100));
+        _upgradesDictionary.Add("Force 2", new Upgrade(100, false, 100));
+        _upgradesDictionary.Add("Duration 2", new Upgrade(100, false, 20));
         
         // Tier 3
-        _upgradesDictionary.Add("Height 3", new Upgrade(1000, false));
-        _upgradesDictionary.Add("Force 3", new Upgrade(1000, false));
-        _upgradesDictionary.Add("Duration 3", new Upgrade(1000, false));
+        _upgradesDictionary.Add("Height 3", new Upgrade(1000, false, 1000));
+        _upgradesDictionary.Add("Force 3", new Upgrade(1000, false, 1000));
+        _upgradesDictionary.Add("Duration 3", new Upgrade(1000, false, 24));
     }
 
     // Update is called once per frame
@@ -100,7 +102,30 @@ public class GameManager : MonoBehaviour
         Souls += soulsAdded;
     }
 
-    bool purchaseUpgrade(string upgradeName)
+    void CalculateImprovement(string name, int value)
+    {
+        if (name.Contains("Height"))
+        {
+            disasterHeight += value;
+        }
+
+        if (name.Contains("Force"))
+        {
+            disasterImpactForce += value;
+        }
+
+        if (name.Contains("Duration"))
+        {
+            disasterDurationInHours += value;
+        }
+
+        else
+        {
+            Debug.Log("Invalid Improvement Name");
+        }
+    }
+
+    public bool purchaseUpgrade(string upgradeName)
     {
         Upgrade upgrade;
         
