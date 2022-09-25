@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,33 +30,29 @@ public class SoulsRewardSystem : MonoBehaviour
         // TODO: Ben fill out a reward calculation system
 
         //Tiers based off how powerful Tsunami is for soul currency to be rewarded with
-        if(height <= 20 && impactForce <= 20 && duration <= 20){ //tier 1
+        if (height <= 20 && impactForce <= 20 && duration <= 20){ //tier 1
             
-             System.out.println("You have been rewared with 20 souls");
+            Debug.Log("You have been rewarded with 20 souls");
             return 20;
         }
-        else if(height <= 40  && impactForce <= 40 && duration <= 40 ){ //tier 2
-            System.out.println("You have been rewared with 40 souls");
+        else if (height <= 40  && impactForce <= 40 && duration <= 40 ){ //tier 2
+            Debug.Log("You have been rewarded with 40 souls");
             return 40;
         }
         else if (height <=  60 && impactForce <= 60 && duration <= 60)//tier 3
         {
-             System.out.println("You have been rewared with 60 souls");
+            Debug.Log("You have been rewarded with 60 souls");
             return 60;
         }
         else if (height <= 80  && impactForce <= 80 && duration <= 80 )//tier 4
         {
-
-            System.out.println("You have been rewared with 80 souls");
+            Debug.Log("You have been rewarded with 80 souls");
             return 80;
-            
         }
-        else{ //tier 5 height, impactForce, and duration == 100
-            System.out.println("You have been rewared with 100 souls");
+        else
+        { //tier 5 height, impactForce, and duration == 100
+            Debug.Log("You have been rewarded with 100 souls");
             return 100;
-           
         }
-
-        
     }
 }
