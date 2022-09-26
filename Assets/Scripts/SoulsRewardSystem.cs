@@ -2,10 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SoulsRewardSystem : MonoBehaviour
 {
     public static SoulsRewardSystem Instance { get; private set; }
+
+    [Range(0, 100)]
+    public float heightScaler = 2f;
+    
+    [Range(0, 100)]
+    public float impactForceScaler = 3f;
+    
+    [Range(0, 100)]
+    public float durationScaler = 4f;
+    
     
     void Awake()
     {
@@ -25,34 +36,10 @@ public class SoulsRewardSystem : MonoBehaviour
 
     // Calculate the reward given the parameters 
     //returns the number of souls
-    int CalculateReward(int height, int impactForce, int duration)
+    public int CalculateReward(int height, int impactForce, int duration)
     {
-        // TODO: Ben fill out a reward calculation system
+        float randomDoubler = (Random.value % 1) + 1;
 
-        //Tiers based off how powerful Tsunami is for soul currency to be rewarded with
-        if (height <= 20 && impactForce <= 20 && duration <= 20){ //tier 1
-            
-            Debug.Log("You have been rewarded with 20 souls");
-            return 20;
-        }
-        else if (height <= 40  && impactForce <= 40 && duration <= 40 ){ //tier 2
-            Debug.Log("You have been rewarded with 40 souls");
-            return 40;
-        }
-        else if (height <=  60 && impactForce <= 60 && duration <= 60)//tier 3
-        {
-            Debug.Log("You have been rewarded with 60 souls");
-            return 60;
-        }
-        else if (height <= 80  && impactForce <= 80 && duration <= 80 )//tier 4
-        {
-            Debug.Log("You have been rewarded with 80 souls");
-            return 80;
-        }
-        else
-        { //tier 5 height, impactForce, and duration == 100
-            Debug.Log("You have been rewarded with 100 souls");
-            return 100;
-        }
+        return (int) Math.Ceiling(randomDoubler * (heightScaler * height + impactForceScaler * impactForce + durationScaler * duration));
     }
 }
