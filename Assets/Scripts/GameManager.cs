@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -156,5 +157,13 @@ public class GameManager : MonoBehaviour
         }
         
         return false;
+    }
+
+    public void OnExit(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            Application.Quit();
+        }
     }
 }
