@@ -158,12 +158,4 @@ public class GameManager : MonoBehaviour
         
         return false;
     }
-
-    public void OnExit(InputValue value)
-    {
-        if (value.isPressed)
-        {
-            Application.Quit();
-        }
-    }
 }

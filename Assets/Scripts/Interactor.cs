@@ -54,4 +54,11 @@ public class Interactor : MonoBehaviour
         AudioManager.Instance.Play("OfficeWorker");
     }
 
+    public void OnExit(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            Application.Quit();
+        }
+    }
 }
