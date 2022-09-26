@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 
 public class AudioManager : MonoBehaviour
 {
@@ -45,4 +46,20 @@ public class AudioManager : MonoBehaviour
         
         sound.source.Play();
     }
+
+    public void Stop(string soundName)
+    {
+        Sound sound = Array.Find(Sounds, sound => sound.Name == soundName);
+
+        if (sound == null)
+        {
+            Debug.LogWarning("Sound: " + soundName + " not found!");
+            return;
+        }
+        
+        sound.source.Stop();
+    }
+    
+    public void OnJump(InputAction action) {}
+    
 }

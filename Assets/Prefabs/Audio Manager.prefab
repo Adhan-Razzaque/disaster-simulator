@@ -51,3 +51,21 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - Name: WelcomeMyChild
+    Clip: {fileID: 8300000, guid: 293c88e1fc6a5c045a0bdd3eea21f771, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: HeyGuysImHome
+    Clip: {fileID: 8300000, guid: 5ae1f5c22546eba42aaa9f77cadf4cd1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: OfficeWorker
+    Clip: {fileID: 8300000, guid: e256b04d836d4cd4e8c0592bf6ceebd0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

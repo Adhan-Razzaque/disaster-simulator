@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering.VirtualTexturing;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -151,6 +152,7 @@ public class GameManager : MonoBehaviour
             if (_totalUpgrades == 9)
             {
                 Debug.Log("Bought all upgrades");
+                SceneManager.LoadScene("End");
             }
 
             return true;
