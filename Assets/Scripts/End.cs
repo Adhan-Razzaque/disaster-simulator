@@ -11,6 +11,7 @@ public class End : MonoBehaviour
         Invoke(nameof(PlayYesGod), 7f); // 2 seconds
         Invoke(nameof(PlayWatchTheDogs), 9f); // 6.5 seconds
         Invoke(nameof(PlayWasHeNot), 15.5f); // 4 seconds
+        Invoke(nameof(PlayGoingToHell), 20f); // 4 seconds
     }
     
     public void PlayYesGod()
@@ -26,5 +27,10 @@ public class End : MonoBehaviour
     public void PlayWasHeNot()
     {
         AudioManager.Instance.Play("WasHeNot");
+    }
+
+    public void PlayGoingToHell()
+    {
+        AudioManager.Instance.Play("GoingToHell");
     }
 }

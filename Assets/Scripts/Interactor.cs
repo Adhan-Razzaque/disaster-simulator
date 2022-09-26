@@ -45,4 +45,16 @@ public class Interactor : MonoBehaviour
             }
         }
     }
+    
+    private bool _firstJump = false;
+
+    public void OnJump(InputValue value)
+    {
+        if (_firstJump) return;
+
+        _firstJump = true;
+        
+        AudioManager.Instance.Play("OfficeWorker");
+    }
+
 }

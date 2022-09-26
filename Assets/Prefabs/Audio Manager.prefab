@@ -69,3 +69,27 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - Name: YesGod
+    Clip: {fileID: 8300000, guid: 0cafe6c1e18555949bbe51e4a6bd8c54, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: WatchTheDogs
+    Clip: {fileID: 8300000, guid: ba0f88faff208c146a58a5479d2d756f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: WasHeNot
+    Clip: {fileID: 8300000, guid: 838e719800afac643bb7f33b53d01d1f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: GoingToHell
+    Clip: {fileID: 8300000, guid: d6bd36671288c1b4bb387af29691aab3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

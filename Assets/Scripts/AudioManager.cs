@@ -59,7 +59,6 @@ public class AudioManager : MonoBehaviour
         
         sound.source.Stop();
     }
-    
-    public void OnJump(InputAction action) {}
-    
+
+
 }
