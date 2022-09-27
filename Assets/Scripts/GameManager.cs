@@ -78,11 +78,11 @@ public class GameManager : MonoBehaviour
             // Tier 2
             {"Height 2", new Upgrade(1000, false, 25)},
             {"Force 2", new Upgrade(1000, false, 25)},
-            {"Duration 2", new Upgrade(1000, false, 25)},
+            {"Duration 2", new Upgrade(100, false, 25)},
             // Tier 3
-            {"Height 3", new Upgrade(100000, false, 100)},
-            {"Force 3", new Upgrade(100000, false, 100)},
-            {"Duration 3", new Upgrade(100000, false, 100)}
+            {"Height 3", new Upgrade(10000, false, 1000)},
+            {"Force 3", new Upgrade(10000, false, 1000)},
+            {"Duration 3", new Upgrade(1000, false, 1000)}
         };
         
         InvokeRepeating(nameof(RewardSouls), 5, 5);
